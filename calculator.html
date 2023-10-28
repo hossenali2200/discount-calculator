@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+
+        <title>Discount Calculator</title>
+        <link rel="stylesheet" href="style.css">
+        <script>
+            function Calculate(){
+                var ta=parseInt(document.getElementById("txta").value);
+                var disc=0.0;
+                var np=0.0;
+                if(ta>0){
+                    if(ta>=50 && ta<100){
+                        disc=ta*0.05;
+                    } 
+                    else if(ta>=100 && ta<=200){
+                        disc=ta*0.10;
+                    }
+                    else if(ta>=201){
+                        disc=ta*0.15;
+                    }
+                    
+                      
+                    document.getElementById("txtb").value=""+disc;
+                    var np=ta-disc;
+                    document.getElementById("txtc").value=""+np;
+                }
+                else{
+                    alert('Invalid Sale Amount')
+                }
+                
+            }
+        </script>
+    </head>
+    <body>
+        <h2>Online Store Discount Calculator </h2>
+        <hr />
+        <div class="table">
+            <table>
+                <tr class="int">
+                    <td>
+                        <label>Total Amount:</label>
+                    </td>
+                    <td>
+                        <input type="text" name="txta" id="txta" />
+                    </td>
+                </tr>
+                <tr class="int">
+                    <td>
+                        &nbsp;
+                    </td>
+                    <td>
+                        <input type="button" value="Calculate Discount" onclick="Calculate()" />
+                    </td>
+                </tr>
+                 <tr class="int">
+                    <td>
+                        <label>Discount</label>
+                    </td>
+                    <td>
+                        <input type="text" name="txtb" id="txtb" readonly />
+                    </td>
+                </tr>
+                <tr class="int">
+                    <td>
+                        <label>Discounted amount</label>
+                    </td>
+                    <td>
+                        <input type="text" name="txtc" id="txtc" readonly />
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </body>
+</html>
